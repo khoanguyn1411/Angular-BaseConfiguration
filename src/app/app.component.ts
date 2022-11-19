@@ -10,6 +10,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-  title = 'rhythm';
-  public asd$: Observable<number> = of(123)
+  readonly title = 'rhythm';
+  public readonly asd$: Observable<number> = of(123)
 }
