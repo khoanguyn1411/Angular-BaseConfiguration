@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
+interface check {
+  readonly asd: number
+}
 
 @Component({
   selector: 'app-root',
