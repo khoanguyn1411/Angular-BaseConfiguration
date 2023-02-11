@@ -18,9 +18,10 @@
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:prettier/recommended"
       ],
-      "plugins": ["rxjs", "@typescript-eslint", "functional", "prettier"],
+      "plugins": ["rxjs", "@typescript-eslint", "functional"],
       "rules": {
         "prettier/prettier": ["error", { "usePrettierrc": true }], // Use our .prettierrc file as source,
         "functional/prefer-readonly-type": ["error"],

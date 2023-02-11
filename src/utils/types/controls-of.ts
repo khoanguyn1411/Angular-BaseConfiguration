@@ -1,6 +1,6 @@
 /* eslint-disable functional/prefer-readonly-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FormArray, FormControl, FormGroup, AbstractControl } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, AbstractControl } from "@angular/forms";
 
 type NonUndefined<T> = T extends undefined ? never : T;
 
@@ -51,12 +51,13 @@ export type FlatControlsOf<T extends Record<string, any>> = {
  *```
  */
 export type DeepControlsOf<T extends Record<string, any>> = {
-  [K in keyof T]: NonUndefined<T[K]> extends AbstractControl ? T[K]
+  [K in keyof T]: NonUndefined<T[K]> extends AbstractControl
+    ? T[K]
     : NonUndefined<T[K]> extends readonly (infer R)[]
-      ? R extends Record<string, any>
-        ? FormArray<FormGroup<DeepControlsOf<R>>>
-        : FormArray<FormControl<R>>
-      : NonUndefined<T[K]> extends Record<string, any>
-        ? FormGroup<DeepControlsOf<T[K]>>
-        : FormControl<T[K]>;
+    ? R extends Record<string, any>
+      ? FormArray<FormGroup<DeepControlsOf<R>>>
+      : FormArray<FormControl<R>>
+    : NonUndefined<T[K]> extends Record<string, any>
+    ? FormGroup<DeepControlsOf<T[K]>>
+    : FormControl<T[K]>;
 };
