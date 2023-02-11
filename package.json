@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "format": "prettier --write \"./src/**/*.{html,css}\" --config ./.prettierrc",
+    "eslint:fix": "eslint --fix \"./src/**/*.{ts,tsx,json}\"",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +40,7 @@
     "@typescript-eslint/parser": "^5.43.0",
     "eslint": "^8.28.0",
     "eslint-plugin-functional": "^4.4.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-rxjs": "^5.0.2",
     "jasmine-core": "~4.2.0",
     "karma": "~6.4.0",

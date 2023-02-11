@@ -20,9 +20,9 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
       ],
-      "plugins": ["rxjs", "@typescript-eslint", "functional"],
+      "plugins": ["rxjs", "@typescript-eslint", "functional", "prettier"],
       "rules": {
-        "@typescript-eslint/indent":["error", 2],
+        "prettier/prettier": ["error", { "usePrettierrc": true }], // Use our .prettierrc file as source,
         "functional/prefer-readonly-type": ["error"],
         "@angular-eslint/directive-selector": [
           "error",

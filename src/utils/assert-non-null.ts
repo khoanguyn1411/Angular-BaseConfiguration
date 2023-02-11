@@ -1,4 +1,4 @@
-import { NonNullableProperties } from './types/non-nullable-properties';
+import { NonNullableProperties } from "./types/non-nullable-properties";
 
 /**
  * Type-assertion for non-nullable types.
@@ -7,7 +7,7 @@ import { NonNullableProperties } from './types/non-nullable-properties';
 export function assertNonNull<T>(value: T): asserts value is NonNullable<T> {
   if (value == null) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    throw new Error('Unexpected null.');
+    throw new Error("Unexpected null.");
   }
 }
 
@@ -16,9 +16,7 @@ export function assertNonNull<T>(value: T): asserts value is NonNullable<T> {
  * @param value Value to assert.
  */
 // polyfill for assertion return https://github.com/microsoft/TypeScript/issues/40562
-export function assertNonNullWithReturn<T>(
-  value: T | null | undefined,
-): NonNullable<T> {
+export function assertNonNullWithReturn<T>(value: T | null | undefined): NonNullable<T> {
   assertNonNull(value);
   return value;
 }
@@ -42,10 +40,10 @@ export function assertNonNullWithReturn<T>(
  *
  * ```
  */
-export function assertNonNullablePropertiesWithReturn<T extends Record<string, unknown>, K extends keyof T>(
-  object: T,
-  ...keys: readonly K[]
-): NonNullableProperties<T, K> {
-  keys.forEach(key => assertNonNull(object[key]));
+export function assertNonNullablePropertiesWithReturn<
+  T extends Record<string, unknown>,
+  K extends keyof T,
+>(object: T, ...keys: readonly K[]): NonNullableProperties<T, K> {
+  keys.forEach((key) => assertNonNull(object[key]));
   return object as unknown as NonNullableProperties<T, K>;
 }
