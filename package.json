@@ -1,6 +1,6 @@
 {
   "name": "angular-base-configuration",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,11 +8,16 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "format": "prettier --write \"./src/**/*.{html,css}\" --config ./.prettierrc",
+    "prettier:fix": "prettier --write \"./src/**/*.{html,css}\" --config ./.prettierrc",
     "eslint:fix": "eslint --fix \"./src/**/*.{ts,tsx,json}\"",
     "prepare": "husky install"
   },
   "private": true,
+  "lint-staged": {
+    "./src/**/*.{ts,tsx,json,html,css}": [
+      "npm run fix-all"
+    ]
+  },
   "dependencies": {
     "@angular/animations": "^14.1.0",
     "@angular/common": "^14.1.0",
