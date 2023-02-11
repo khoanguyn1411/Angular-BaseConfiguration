@@ -18,7 +18,6 @@ export function assertNonNull<T>(value: T): asserts value is NonNullable<T> {
 // polyfill for assertion return https://github.com/microsoft/TypeScript/issues/40562
 export function assertNonNullWithReturn<T>(value: T | null | undefined): NonNullable<T> {
   assertNonNull(value);
-
   return value;
 }
 
