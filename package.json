@@ -10,12 +10,13 @@
     "lint": "ng lint",
     "prettier:fix": "prettier --write \"./src/**/*.{html,css}\" --config ./.prettierrc",
     "eslint:fix": "eslint --fix \"./src/**/*.{ts,tsx,json}\"",
+    "format": "npm run prettier:fix && npm run eslint:fix",
     "prepare": "husky install"
   },
   "private": true,
   "lint-staged": {
     "./src/**/*.{ts,tsx,json,html,css}": [
-      "npm run fix-all"
+      "npm run format"
     ]
   },
   "dependencies": {
