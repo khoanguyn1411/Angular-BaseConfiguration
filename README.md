@@ -1,4 +1,4 @@
-# REACT BASE CONFIGURATION PROJECT
+# ANGULAR BASE CONFIGURATION PROJECT
 ## Overview
 - Language: Typescript
 - Package manager: npm
